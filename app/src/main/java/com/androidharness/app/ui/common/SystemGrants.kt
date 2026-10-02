@@ -9,6 +9,8 @@ import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
 import androidx.core.content.ContextCompat
+import com.androidharness.app.data.env.ShizukuState
+import com.androidharness.app.data.env.UserServiceState
 
 /**
  * Runtime permission / system-toggle checks and request intents shared by the
@@ -22,17 +24,32 @@ object SystemGrants {
                 context, Manifest.permission.POST_NOTIFICATIONS,
             ) == PackageManager.PERMISSION_GRANTED
 
+    /**
+     * Whether the app can rely on broad filesystem access for its shell/file
+     * workflows. On Android 11+ this is the OS "All files access" toggle. On
+     * Android 10 and below, scoped storage is not the API-level mechanism, so
+     * this check is satisfied without requiring the Android 11+ toggle.
+     */
     fun isAllFilesAccessGranted(context: Context): Boolean =
         if (Build.VERSION.SDK_INT >= 30) {
             android.os.Environment.isExternalStorageManager()
         } else {
-            ContextCompat.checkSelfPermission(
-                context, Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            ) == PackageManager.PERMISSION_GRANTED &&
-            ContextCompat.checkSelfPermission(
-                context, Manifest.permission.READ_EXTERNAL_STORAGE,
-            ) == PackageManager.PERMISSION_GRANTED
+            true
         }
+
+    /**
+     * Storage is also satisfied when the app has a live Shizuku user service,
+     * because shared-storage/system shell execution is routed through that
+     * privileged tier.
+     */
+    fun isStorageCapabilityReady(
+        context: Context,
+        shizukuState: ShizukuState,
+        serviceState: UserServiceState,
+    ): Boolean =
+        isAllFilesAccessGranted(context) ||
+            (shizukuState == ShizukuState.GRANTED &&
+                serviceState == UserServiceState.BOUND_READY)
 
     fun isIgnoringBatteryOptimizations(context: Context): Boolean =
         runCatching {
