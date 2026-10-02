@@ -219,7 +219,7 @@ fun SetupScreen(
                 SetupStep(
                     icon = { Icon(Icons.Outlined.Terminal, null, Modifier.size(16.dp), scheme.onSurfaceVariant) },
                     title = "Linux environment",
-                    status = when (s = envState) {
+                    status = when (val s = envState) {
                         EnvState.Ready -> "Ready: bash, git, python, node and npm for real commands"
                         is EnvState.Downloading -> "Downloading " + s.pkg + " (" + s.index + "/" + s.total + ")"
                         is EnvState.Installing -> "Installing " + s.pkg + " (" + s.index + "/" + s.total + ")"
