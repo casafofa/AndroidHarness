@@ -31,7 +31,6 @@ import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -47,6 +46,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.androidharness.app.AppContainer
 import com.androidharness.app.data.env.EnvState
 import com.androidharness.app.data.env.ShizukuState
+import com.androidharness.app.data.env.UserServiceState
 import com.androidharness.app.ui.common.HarnessMark
 import com.androidharness.app.ui.common.SystemGrants
 import com.androidharness.app.ui.common.ThinLinearProgress
@@ -79,7 +79,9 @@ fun SetupScreen(
     val envState by container.linuxEnv.state.collectAsStateWithLifecycle()
 
     var storageGranted by remember {
-        mutableStateOf(SystemGrants.isAllFilesAccessGranted(context))
+        mutableStateOf(
+            SystemGrants.isStorageCapabilityReady(context, shizukuState, serviceState),
+        )
     }
     var notifGranted by remember {
         mutableStateOf(SystemGrants.isPostNotificationsGranted(context))
@@ -92,7 +94,8 @@ fun SetupScreen(
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
             if (event == Lifecycle.Event.ON_RESUME) {
-                storageGranted = SystemGrants.isAllFilesAccessGranted(context)
+                storageGranted =
+                    SystemGrants.isStorageCapabilityReady(context, shizukuState, serviceState)
                 notifGranted = SystemGrants.isPostNotificationsGranted(context)
                 batteryExempt = SystemGrants.isIgnoringBatteryOptimizations(context)
             }
@@ -109,8 +112,8 @@ fun SetupScreen(
     }
 
     // ---- Step completion -------------------------------------------------
-    val shizukuDone = shizukuState == ShizukuState.GRANTED && serviceState ==
-        com.androidharness.app.data.env.UserServiceState.BOUND_READY
+    val shizukuDone = shizukuState == ShizukuState.GRANTED &&
+        serviceState == UserServiceState.BOUND_READY
     val envDone = envState is EnvState.Ready
     val requiredDone = storageGranted && notifGranted
     val completed = listOf(storageGranted, notifGranted, shizukuDone, envDone, batteryExempt).count { it }
@@ -155,12 +158,16 @@ fun SetupScreen(
                 SetupStep(
                     icon = { Icon(Icons.Outlined.SdStorage, null, Modifier.size(16.dp), scheme.onSurfaceVariant) },
                     title = "Storage access",
-                    status = if (storageGranted) "All files access granted"
-                             else "Required: grant all files access to read and edit project files",
+                    status = when {
+                        storageGranted && shizukuDone && !SystemGrants.isAllFilesAccessGranted(context) ->
+                            "Shizuku privileged storage access ready"
+                        storageGranted -> "All files access granted"
+                        else -> "Required: grant all files access to read and edit project files"
+                    },
                     complete = storageGranted,
                     optional = false,
                 ) {
-                    if (!storageGranted) {
+                    if (!storageGranted && android.os.Build.VERSION.SDK_INT >= 30) {
                         Button(onClick = { SystemGrants.openAllFilesAccess(context) }) { Text("Grant") }
                     }
                 }
@@ -169,7 +176,7 @@ fun SetupScreen(
                 SetupStep(
                     icon = { Icon(Icons.Outlined.Notifications, null, Modifier.size(16.dp), scheme.onSurfaceVariant) },
                     title = "Notifications",
-                    status = if (notifGranted) "Runs report progress and approvals" 
+                    status = if (notifGranted) "Runs report progress and approvals"
                              else "Required: needed for run progress while backgrounded",
                     complete = notifGranted,
                     optional = false,
@@ -192,7 +199,7 @@ fun SetupScreen(
                         ShizukuState.NOT_RUNNING -> "Open the Shizuku app and start it"
                         ShizukuState.RUNNING_NO_PERMISSION -> "Grant access to unlock ADB-level commands"
                         ShizukuState.GRANTED ->
-                            if (serviceState == com.androidharness.app.data.env.UserServiceState.BOUND_READY)
+                            if (serviceState == UserServiceState.BOUND_READY)
                                 "Connected: privileged shell ready"
                             else "Granted: waiting for user service…"
                     },
@@ -212,10 +219,10 @@ fun SetupScreen(
                 SetupStep(
                     icon = { Icon(Icons.Outlined.Terminal, null, Modifier.size(16.dp), scheme.onSurfaceVariant) },
                     title = "Linux environment",
-                    status = when (val s = envState) {
+                    status = when (s = envState) {
                         EnvState.Ready -> "Ready: bash, git, python, node and npm for real commands"
-                        is EnvState.Downloading -> "Downloading ${s.pkg} (${s.index}/${s.total})"
-                        is EnvState.Installing -> "Installing ${s.pkg} (${s.index}/${s.total})"
+                        is EnvState.Downloading -> "Downloading " + s.pkg + " (" + s.index + "/" + s.total + ")"
+                        is EnvState.Installing -> "Installing " + s.pkg + " (" + s.index + "/" + s.total + ")"
                         is EnvState.Preparing -> "Resolving packages…"
                         is EnvState.Failed -> s.message.take(80)
                         EnvState.NotInstalled -> "Optional: bash, git, python, pip, node, npm for real commands"
@@ -270,7 +277,6 @@ fun SetupScreen(
             }
         }
     }
-
 }
 
 @Composable
