@@ -1,0 +1,228 @@
+2026-10-02T22:41:15.239-0400 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 26: received class org.gradle.launcher.daemon.protocol.Build
+2026-10-02T22:41:15.243-0400 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 26: Received non-IO message from client: Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}
+2026-10-02T22:41:15.245-0400 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}.
+2026-10-02T22:41:15.246-0400 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness} with connection: socket connection from /127.0.0.1:36967 to /127.0.0.1:48016.
+2026-10-02T22:41:15.262-0400 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:36967 to /127.0.0.1:48016] after 0.006083333333333333 minutes of idle
+2026-10-02T22:41:15.296-0400 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}. Dispatching build started information...
+2026-10-02T22:41:15.298-0400 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 28: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@cbb864d
+2026-10-02T22:41:15.336-0400 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 4 GiB]
+2026-10-02T22:41:15.354-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-10-02T22:41:15.358-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=06e3e9c5-f2de-471b-bf85-767b68a285a9,javaHome=/usr/lib/jvm/java-21-openjdk-amd64,javaVersion=21,javaVendor=Debian,daemonRegistryDir=/home/mo/.gradle/daemon,pid=38142,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx4g,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
+WARNING: API 'applicationVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+For more information, see http://developer.android.com/build/r/new-dsl.
+Add android.sync.suppressAgpWarnings=DEPRECATED_DSL to the gradle.properties file to suppress this warning.
+WARNING: API 'testVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+For more information, see http://developer.android.com/build/r/new-dsl.
+Add android.sync.suppressAgpWarnings=DEPRECATED_DSL to the gradle.properties file to suppress this warning.
+WARNING: API 'unitTestVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+For more information, see http://developer.android.com/build/r/new-dsl.
+Add android.sync.suppressAgpWarnings=DEPRECATED_DSL to the gradle.properties file to suppress this warning.
+w: file:///home/mo/github-projects/AndroidHarness/app/build.gradle.kts:26:1: 'fun Project.android(configure: Action<BaseAppModuleExtension>): Unit' is deprecated. Replaced by com.android.build.api.dsl.ApplicationExtension.
+w: [33m[1m⚠️ Deprecated 'org.jetbrains.kotlin.android' plugin usage[0m[0m
+Build tasks
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildKotlinToolingMetadata - Build metadata json file containing information about the used Kotlin tooling
+buildNeeded - Assembles and tests this project and all projects it depends on.
+clean - Deletes the build directory.
+buildEnvironment - Displays all buildscript dependencies declared in project ':app'.
+installDebug - Installs the Debug build.
+installDebugAndroidTest - Installs the android (on device) tests for the Debug build.
+installRelease - Installs the Release build.
+uninstallDebug - Uninstalls the Debug build.
+uninstallDebugAndroidTest - Uninstalls the android (on device) tests for the Debug build.
+uninstallRelease - Uninstalls the Release build.
+checkKotlinGradlePluginConfigurationErrors - Checks that Kotlin Gradle Plugin hasn't reported project configuration errors, failing otherwise. This task always runs before compileKotlin* or similar tasks.
+testDebugUnitTest - Run unit tests for the debug build.
+assembleDebug - Assembles main output for variant debug
+assembleDebugAndroidTest - Assembles main output for variant debugAndroidTest
+assembleDebugUnitTest - Assembles main output for variant debugUnitTest
+buildCMakeDebug
+buildCMakeDebug[arm64-v8a]
+buildCMakeDebug[armeabi-v7a]
+buildCMakeDebug[x86]
+buildCMakeDebug[x86_64]
+buildCMakeRelWithDebInfo
+buildCMakeRelWithDebInfo[arm64-v8a]
+buildCMakeRelWithDebInfo[armeabi-v7a]
+buildCMakeRelWithDebInfo[x86]
+buildCMakeRelWithDebInfo[x86_64]
+buildDebugPreBundle
+buildReleasePreBundle
+configureCMakeDebug
+configureCMakeDebug[arm64-v8a]
+configureCMakeDebug[armeabi-v7a]
+configureCMakeDebug[x86]
+configureCMakeDebug[x86_64]
+configureCMakeRelWithDebInfo
+configureCMakeRelWithDebInfo[arm64-v8a]
+configureCMakeRelWithDebInfo[armeabi-v7a]
+configureCMakeRelWithDebInfo[x86]
+configureCMakeRelWithDebInfo[x86_64]
+createDebugAndroidTestApkListingFileRedirect
+createDebugApkListingFileRedirect
+createDebugApksFromBundleListingFileRedirect
+createReleaseApkListingFileRedirect
+createReleaseApksFromBundleListingFileRedirect
+dexBuilderDebug
+dexBuilderDebugAndroidTest
+dexBuilderRelease
+externalNativeBuildCleanDebug
+externalNativeBuildCleanRelease
+externalNativeBuildDebug
+externalNativeBuildRelease
+extractApksForDebug
+extractApksForRelease
+extractApksFromBundleForDebug
+extractApksFromBundleForRelease
+generateDebugAndroidTestBuildConfig
+generateDebugBuildConfig
+generateReleaseBuildConfig
+makeApkFromBundleForDebug
+makeApkFromBundleForRelease
+packageDebugUniversalApk
+packageReleaseUniversalApk
+preBuild
+preDebugAndroidTestBuild
+preDebugBuild
+preDebugUnitTestBuild
+preReleaseBuild
+zipApksForDebug
+zipApksForRelease
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+[Incubating] Problems report is available at: file:///home/mo/github-projects/AndroidHarness/build/reports/problems/problems-report.html
+BUILD SUCCESSFUL in 4m 26s
+2026-10-02T22:45:35.198-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+2026-10-02T22:45:35.223-0400 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:36967 to /127.0.0.1:48016]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@413ae1b2 with state Busy
+2026-10-02T22:45:35.224-0400 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:36967 to /127.0.0.1:48016]
+2026-10-02T22:45:35.240-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.launcher.exec.BuildActionResult@abb1150]
+2026-10-02T22:45:35.241-0400 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 25: dispatching Success[value=org.gradle.launcher.exec.BuildActionResult@abb1150]
+2026-10-02T22:45:35.252-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.CleanUpVirtualFileSystemAfterBuild] Cleaning virtual file system after build finished
+2026-10-02T22:45:35.262-0400 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=98b25dfe-696b-43ce-acb8-00b7a7456409, currentDir=/home/mo/github-projects/AndroidHarness}
+2026-10-02T22:46:30.733-0400 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 127: received class org.gradle.launcher.daemon.protocol.Build
+2026-10-02T22:46:30.734-0400 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 127: Received non-IO message from client: Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}
+2026-10-02T22:46:30.739-0400 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}.
+2026-10-02T22:46:30.740-0400 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness} with connection: socket connection from /127.0.0.1:36967 to /127.0.0.1:56782.
+2026-10-02T22:46:30.741-0400 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:36967 to /127.0.0.1:56782] after 0.92525 minutes of idle
+2026-10-02T22:46:30.746-0400 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}. Dispatching build started information...
+2026-10-02T22:46:30.746-0400 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 28: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@3e8b9006
+2026-10-02T22:46:30.759-0400 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting 2nd build in daemon [uptime: 5 mins 16.347 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 4 GiB]
+2026-10-02T22:46:30.763-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-10-02T22:46:30.764-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=06e3e9c5-f2de-471b-bf85-767b68a285a9,javaHome=/usr/lib/jvm/java-21-openjdk-amd64,javaVersion=21,javaVendor=Debian,daemonRegistryDir=/home/mo/.gradle/daemon,pid=38142,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx4g,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
+WARNING: API 'applicationVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+For more information, see http://developer.android.com/build/r/new-dsl.
+Add android.sync.suppressAgpWarnings=DEPRECATED_DSL to the gradle.properties file to suppress this warning.
+WARNING: API 'testVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+For more information, see http://developer.android.com/build/r/new-dsl.
+Add android.sync.suppressAgpWarnings=DEPRECATED_DSL to the gradle.properties file to suppress this warning.
+WARNING: API 'unitTestVariants' is obsolete and has been replaced with 'AndroidComponentsExtension'.
+For more information, see http://developer.android.com/build/r/new-dsl.
+Add android.sync.suppressAgpWarnings=DEPRECATED_DSL to the gradle.properties file to suppress this warning.
+w: [33m[1m⚠️ Deprecated 'org.jetbrains.kotlin.android' plugin usage[0m[0m
+Checking the license for package Android SDK Build-Tools 36 in /home/mo/Android/Sdk/licenses
+License for package Android SDK Build-Tools 36 accepted.
+Preparing "Install Android SDK Build-Tools 36 v.36.0.0".
+"Install Android SDK Build-Tools 36 v.36.0.0" ready.
+Installing Android SDK Build-Tools 36 in /home/mo/Android/Sdk/build-tools/36.0.0
+"Install Android SDK Build-Tools 36 v.36.0.0" complete.
+"Install Android SDK Build-Tools 36 v.36.0.0" finished.
+[=========                              ] 25%                                   w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/agent/AgentEngine.kt:491:50 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/agent/AgentEngine.kt:1292:47 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/agent/RunManager.kt:833:42 Condition is always 'true'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/agent/StreamRetrier.kt:20:5 This declaration is in a preview state and can be changed in a backwards-incompatible manner with a best-effort migration. Its usage should be marked with '@kotlinx.coroutines.FlowPreview' or '@OptIn(kotlinx.coroutines.FlowPreview::class)' if you accept the drawback of relying on preview API
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/agent/StreamRetrier.kt:100:80 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/browser/BrowserController.kt:292:67 Elvis operator (?:) always returns the left operand of non-nullable type 'WebBackForwardList'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/browser/BrowserController.kt:900:67 Elvis operator (?:) always returns the left operand of non-nullable type 'WebBackForwardList'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:30:49 'class EncryptedSharedPreferences : Any, SharedPreferences' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:33:9 'class MasterKey : Any' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:33:19 'constructor(p0: Context): MasterKey.Builder' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:33:49 'class MasterKey : Any' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:33:59 'enum class KeyScheme : Enum<MasterKey.KeyScheme!>' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:34:9 'class EncryptedSharedPreferences : Any, SharedPreferences' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:34:36 'enum class PrefKeyEncryptionScheme : Enum<EncryptedSharedPreferences.PrefKeyEncryptionScheme!>' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:35:9 'class EncryptedSharedPreferences : Any, SharedPreferences' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/KeyStoreManager.kt:35:36 'enum class PrefValueEncryptionScheme : Enum<EncryptedSharedPreferences.PrefValueEncryptionScheme!>' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/SessionRepository.kt:521:101 Unnecessary non-null assertion (!!) on a non-null receiver of type 'ByteArray'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/CodeGraphManager.kt:678:37 'val nextTarEntry: TarArchiveEntry!' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/CodeGraphManager.kt:738:33 'val nextTarEntry: TarArchiveEntry!' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/LinuxEnvironment.kt:54:43 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/LinuxEnvironment.kt:1586:33 'val nextTarEntry: TarArchiveEntry!' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/LinuxEnvironment.kt:1647:88 Redundant call of conversion method.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/LinuxEnvironment.kt:1655:88 Redundant call of conversion method.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/env/LinuxEnvironment.kt:1665:80 Redundant call of conversion method.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/data/update/UpdateIntents.kt:25:36 'static field ACTION_INSTALL_PACKAGE: String' is deprecated. Deprecated in Java.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/local/LocalModelManager.kt:447:54 The corresponding parameter in the supertype 'Callback' is named 'bytes'. This may cause problems when calling this function with named arguments.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/local/LocalModelManager.kt:496:54 The corresponding parameter in the supertype 'ChatCallback' is named 'bytes'. This may cause problems when calling this function with named arguments.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/local/LocalModelManager.kt:503:56 The corresponding parameter in the supertype 'ChatCallback' is named 'bytes'. This may cause problems when calling this function with named arguments.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/tools/SearchBackends.kt:78:33 Unnecessary safe call on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/AppNav.kt:466:61 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/AppNav.kt:471:55 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/automation/AutomationScreen.kt:862:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatFileDiffSheet.kt:33:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatScreen.kt:307:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatScreen.kt:1151:87 Unnecessary safe call on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatScreen.kt:1336:36 Condition is always 'true'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatScreen.kt:1570:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatViewModel.kt:1082:21 Unnecessary safe call on a non-null receiver of type 'String'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/ChatViewModel.kt:1382:45 Unnecessary safe call on a non-null receiver of type 'WorkspaceFs'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/MarkdownText.kt:445:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/MarkdownText.kt:643:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/TaskControls.kt:125:69 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/EnvSheet.kt:54:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/ModelPickerSheet.kt:115:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/Shared.kt:50:48 'val Icons.Outlined.Article: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.Article.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/Shared.kt:57:35 'val Icons.Outlined.DriveFileMove: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.DriveFileMove.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/SkillsPickerSheet.kt:40:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/SubagentCard.kt:155:36 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/WebPreviewSheet.kt:183:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/chat/components/WorkspaceSwitcherSheet.kt:54:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/common/VisualDiffViewer.kt:90:21 'val LocalClipboardManager: ProvidableCompositionLocal<ClipboardManager>' is deprecated. Use LocalClipboard instead which supports suspend functions.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/CodeEditorScreen.kt:220:45 'val Icons.Outlined.Undo: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.Undo.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/CodeEditorScreen.kt:224:45 'val Icons.Outlined.Redo: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.Redo.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/CodeEditorScreen.kt:285:69 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/CodeEditorScreen.kt:374:79 Unnecessary safe call on a non-null receiver of type 'EditorAutoCompletion'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/CodeEditorScreen.kt:496:29 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/CodeEditorScreen.kt:509:37 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/FilesScreen.kt:284:73 'val Icons.Outlined.NoteAdd: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.NoteAdd.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/FilesScreen.kt:344:44 Unnecessary non-null assertion (!!) on a non-null receiver of type '() -> Unit'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/FilesScreen.kt:569:89 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/files/FilesScreen.kt:604:44 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/AgentBehaviorSection.kt:157:26 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/LocalModelsSection.kt:186:5 'fun TabRow(selectedTabIndex: Int, modifier: Modifier = ..., containerColor: Color = ..., contentColor: Color = ..., indicator: ComposableFunction1<List<TabPosition>, Unit> = ..., divider: ComposableFunction0<Unit> = ..., tabs: ComposableFunction0<Unit>): Unit' is deprecated. Replaced with PrimaryTabRow and SecondaryTabRow.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/PackageManagerSheet.kt:87:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/ProviderManagerSheet.kt:81:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/ProviderSheet.kt:117:22 'fun rememberModalBottomSheetState(skipPartiallyExpanded: Boolean = ..., confirmValueChange: (SheetValue) -> Boolean = ...): SheetState' is deprecated. Use rememberBottomSheetState with Hidden initial value.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/SettingsHome.kt:153:44 'val Icons.Outlined.ShortText: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ShortText.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/SettingsScreen.kt:819:41 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/SettingsScreen.kt:1084:44 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/settings/SettingsScreen.kt:1340:48 'val Icons.Outlined.OpenInNew: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.OpenInNew.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/subagent/SubagentScreen.kt:201:62 Unnecessary non-null assertion (!!) on a non-null receiver of type 'ChatMessage'.
+w: file:///home/mo/github-projects/AndroidHarness/app/src/main/java/com/androidharness/app/ui/update/UpdateDialog.kt:760:38 'fun ClickableText(text: AnnotatedString, modifier: Modifier = ..., style: TextStyle = ..., softWrap: Boolean = ..., overflow: TextOverflow = ..., maxLines: Int = ..., onTextLayout: (TextLayoutResult) -> Unit = ..., onClick: (Int) -> Unit): Unit' is deprecated. Use Text or BasicText and pass an AnnotatedString that contains a LinkAnnotation. Check LinkAnnotation's documentation for more details and samples.
+C/C++: CMAKE_BUILD_TYPE=Release
+C/C++: CMake Warning at /home/mo/github-projects/AndroidHarness/app/.cxx/Debug/5x52r4j2/arm64-v8a/_deps/llama-src/vendor/cpp-httplib/CMakeLists.txt:154 (message):
+C/C++:   OpenSSL not found, HTTPS support disabled
+C/C++: CMake Warning at /home/mo/github-projects/AndroidHarness/app/.cxx/Debug/5x52r4j2/arm64-v8a/_deps/llama-src/common/CMakeLists.txt:33 (message):
+C/C++:   Git repository not found; to enable automatic generation of build info,
+C/C++: CMAKE_BUILD_TYPE=Release
+C/C++: CMake Warning at /home/mo/github-projects/AndroidHarness/app/.cxx/Debug/5x52r4j2/x86_64/_deps/llama-src/vendor/cpp-httplib/CMakeLists.txt:154 (message):
+C/C++:   OpenSSL not found, HTTPS support disabled
+C/C++: CMake Warning at /home/mo/github-projects/AndroidHarness/app/.cxx/Debug/5x52r4j2/x86_64/_deps/llama-src/common/CMakeLists.txt:33 (message):
+C/C++:   Git repository not found; to enable automatic generation of build info,
+[Incubating] Problems report is available at: file:///home/mo/github-projects/AndroidHarness/build/reports/problems/problems-report.html
+BUILD SUCCESSFUL in 1h 10m 35s
+2026-10-02T23:57:03.276-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+2026-10-02T23:57:03.327-0400 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:36967 to /127.0.0.1:56782]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@413ae1b2 with state Busy
+2026-10-02T23:57:03.328-0400 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:36967 to /127.0.0.1:56782]
+2026-10-02T23:57:03.334-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Success[value=org.gradle.launcher.exec.BuildActionResult@32567571]
+2026-10-02T23:57:03.335-0400 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 25: dispatching Success[value=org.gradle.launcher.exec.BuildActionResult@32567571]
+2026-10-02T23:57:03.337-0400 [DEBUG] [org.gradle.launcher.daemon.server.exec.CleanUpVirtualFileSystemAfterBuild] Cleaning virtual file system after build finished
+2026-10-02T23:57:03.341-0400 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: Build{id=3d651ee9-05b8-4f1a-9c45-42b273c8bfef, currentDir=/home/mo/github-projects/AndroidHarness}
